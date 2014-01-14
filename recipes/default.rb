@@ -7,6 +7,7 @@
 
 python_pip "mongoctl" do
     action :install
+    options "--no-deps" if node["mongoctl"]["no-deps"]
 end
 
 node["mongoctl"]["users"].each do |user|
